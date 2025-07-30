@@ -62,6 +62,10 @@
       line-height: 24px;
       margin: 0;
     }
+    /* Simple styling for the details content */
+    details > div {
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body class="p-6 sm:p-10">
@@ -102,7 +106,40 @@
   <footer class="text-center border-t-2 border-dashed border-gray-300 pt-10">
     <p class="text-lg mb-1">Say Hello</p>
     <a href="mailto:support@easternlabs.app" class="text-blue-700 underline hover:text-pink-500">support@easternlabs.app</a>
-    <p class="text-xs text-gray-400 mt-10">&copy; 2025 EasternLabs. All rights reserved.</p>
+
+    <!-- START: NEW COLLAPSIBLE PRIVACY POLICY -->
+    <div class="max-w-2xl mx-auto mt-8">
+      <details class="text-left">
+        <summary class="cursor-pointer text-sm text-gray-500 hover:underline">
+          Privacy Policy
+        </summary>
+        <div class="mt-4 p-6 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 space-y-4">
+          <h2 class="text-lg font-bold text-gray-900">Privacy Policy for SolidNote</h2>
+          <p><strong>Last Updated:</strong> May 24, 2024</p>
+          
+          <h3 class="font-bold text-gray-900">1. Introduction</h3>
+          <p>Welcome to SolidNote, an application provided by Eastern Labs ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share information about you when you use our mobile application, SolidNote (the "App").</p>
+          
+          <h3 class="font-bold text-gray-900">2. Information We Collect</h3>
+          <p>We collect information to provide and improve our service to you. This includes: User Content (projects, issues, photos you create), Account Information (email address if you subscribe), and automatically collected data like Purchase History and anonymous Diagnostics.</p>
+
+          <h3 class="font-bold text-gray-900">3. How We Use Your Information</h3>
+          <p>We use your information to provide the App's core functionality, manage your subscription, improve the App by fixing bugs, and communicate with you. For the initial version of SolidNote, all of your project and issue data is stored locally on your device; we do not have access to it.</p>
+
+          <h3 class="font-bold text-gray-900">4. Information Sharing</h3>
+          <p>We do not sell your personal data. We only share information with trusted third-party service providers who assist us in operating our app, such as Apple (for In-App Purchases) and RevenueCat (to manage subscription status), under strict confidentiality agreements.</p>
+          
+          <h3 class="font-bold text-gray-900">5. Your Choices</h3>
+          <p>You can manage the information you provide by editing or deleting your projects and issues directly within the App. You can manage your subscription through your Apple ID settings.</p>
+
+          <h3 class="font-bold text-gray-900">6. Contact Us</h3>
+          <p>If you have any questions about this Privacy Policy, please contact us at support@easternlabs.app.</p>
+        </div>
+      </details>
+    </div>
+    <!-- END: NEW COLLAPSIBLE PRIVACY POLICY -->
+
+    <p class="text-xs text-gray-400 mt-10">© 2025 EasternLabs. All rights reserved.</p>
   </footer>
 </body>
 </html>
