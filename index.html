@@ -62,9 +62,96 @@
       line-height: 24px;
       margin: 0;
     }
-    /* Simple styling for the details content */
     details > div {
       line-height: 1.6;
+    }
+    /* Enhance visibility for footer policy links */
+    .footer-policies-bar {
+      background: #fff8dc;
+      border-top: 2px dashed #d97706;
+      border-bottom: 2px dashed #e5e7eb;
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 40;
+      padding: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 1rem;
+    }
+    @media (max-width: 640px) {
+      .footer-policies-bar {
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: center;
+      }
+    }
+    .footer-policies-bar button {
+      font-family: 'Roboto Mono', monospace;
+      background: none;
+      color: #d97706;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.2s;
+      border-radius: 4px;
+    }
+    .footer-policies-bar button:focus,
+    .footer-policies-bar button:hover {
+      color: #be185d;
+      text-decoration: underline;
+      outline: none;
+    }
+    .policy-modal-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(34,34,34,0.45);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .policy-modal-content {
+      background: #fff8dc;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      max-width: 95vw;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2.5rem 2rem 2rem 2rem;
+      box-shadow: 0 4px 32px rgba(34,34,34,0.10);
+      font-size: 1rem;
+      color: #333;
+      position: relative;
+    }
+    .policy-modal-content h2 {
+      color: #be185d;
+    }
+    .policy-modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.4rem;
+      font-size: 1.5rem;
+      color: #be185d;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'VT323', monospace;
+      font-weight: bold;
+    }
+    .policy-modal-content ul {
+      margin-left: 1.5em;
+      margin-bottom: 0.75em;
+    }
+    .policy-modal-content a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+    .policy-modal-content a:hover {
+      color: #be185d;
     }
   </style>
 </head>
@@ -106,22 +193,24 @@
   <footer class="text-center border-t-2 border-dashed border-gray-300 pt-10">
     <p class="text-lg mb-1">Say Hello</p>
     <a href="mailto:support@easternlabs.app" class="text-blue-700 underline hover:text-pink-500">support@easternlabs.app</a>
+    <p class="text-xs text-gray-400 mt-10">© 2025 EasternLabs. All rights reserved.</p>
+  </footer>
 
-<!-- START: NEW COLLAPSIBLE PRIVACY POLICY -->
-<div class="max-w-2xl mx-auto mt-8">
-  <details class="text-left">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:underline">
+  <!-- Policies Footer Bar (ALWAYS visible & prominent) -->
+  <div class="footer-policies-bar" id="footerPoliciesBar">
+    <button id="privacyPolicyBtn" aria-controls="privacyPolicyModal" aria-expanded="false">
       Privacy Policy
-    </summary>
-    <div class="mt-4 p-6 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 space-y-4">
-      <!-- START: NEW COLLAPSIBLE PRIVACY POLICY -->
-<div class="max-w-2xl mx-auto mt-8">
-  <details class="text-left">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:underline">
-      Privacy Policy
-    </summary>
-    <div class="mt-4 p-6 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 space-y-4">
-      <h2 class="text-lg font-bold text-gray-900">Privacy Policy for SolidNote</h2>
+    </button>
+    <button id="termsServiceBtn" aria-controls="termsServiceModal" aria-expanded="false">
+      Terms of Service
+    </button>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div id="privacyPolicyModal" class="policy-modal-bg" style="display:none;">
+    <div class="policy-modal-content" role="dialog" aria-modal="true" aria-labelledby="privacyPolicyTitle">
+      <button class="policy-modal-close" aria-label="Close Privacy Policy" onclick="closePolicyModal('privacyPolicyModal')">&times;</button>
+      <h2 id="privacyPolicyTitle" class="text-lg font-bold text-gray-900">Privacy Policy for SolidNote</h2>
       <p><strong>Last updated:</strong> July 2025</p>
 
       <h3 class="font-bold text-gray-900">Introduction</h3>
@@ -215,15 +304,13 @@
       <h3 class="font-bold text-gray-900">International Users</h3>
       <p>If you are using SolidNote from outside the United States, please note that your information may be transferred to and processed in the United States, where our servers are located.</p>
     </div>
-  </details>
+  </div>
 
-  <!-- START: TERMS OF SERVICE DROPDOWN -->
-  <details class="text-left mt-6">
-    <summary class="cursor-pointer text-sm text-gray-500 hover:underline">
-      Terms of Service
-    </summary>
-    <div class="mt-4 p-6 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 space-y-4">
-      <h2 class="text-lg font-bold text-gray-900">Terms of Service for SolidNote</h2>
+  <!-- Terms of Service Modal -->
+  <div id="termsServiceModal" class="policy-modal-bg" style="display:none;">
+    <div class="policy-modal-content" role="dialog" aria-modal="true" aria-labelledby="termsServiceTitle">
+      <button class="policy-modal-close" aria-label="Close Terms of Service" onclick="closePolicyModal('termsServiceModal')">&times;</button>
+      <h2 id="termsServiceTitle" class="text-lg font-bold text-gray-900">Terms of Service for SolidNote</h2>
       <p><strong>Last updated:</strong> July 2025</p>
 
       <h3 class="font-bold text-gray-900">Agreement to Terms</h3>
@@ -307,14 +394,39 @@
       <h3 class="font-bold text-gray-900">Entire Agreement</h3>
       <p>These Terms constitute the entire agreement between you and SolidNote regarding the use of the App.</p>
     </div>
-  </details>
-  <!-- END: TERMS OF SERVICE DROPDOWN -->
-</div>
-<!-- END: NEW COLLAPSIBLE PRIVACY POLICY -->
+  </div>
 
-
-
-    <p class="text-xs text-gray-400 mt-10">© 2025 EasternLabs. All rights reserved.</p>
-  </footer>
+  <script>
+    function openPolicyModal(modalId, btnId) {
+      document.getElementById(modalId).style.display = 'flex';
+      document.getElementById(btnId).setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePolicyModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      document.getElementById('privacyPolicyBtn').setAttribute('aria-expanded', 'false');
+      document.getElementById('termsServiceBtn').setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    // Accessibility: close modal on Esc key
+    document.addEventListener('keydown', function(evt) {
+      if ((evt.key === 'Escape' || evt.key === 'Esc')) {
+        if(document.getElementById('privacyPolicyModal').style.display === 'flex') closePolicyModal('privacyPolicyModal');
+        if(document.getElementById('termsServiceModal').style.display === 'flex') closePolicyModal('termsServiceModal');
+      }
+    });
+    // Button event listeners
+    document.addEventListener('DOMContentLoaded', function(){
+      document.getElementById('privacyPolicyBtn').addEventListener('click', function(){ openPolicyModal('privacyPolicyModal', 'privacyPolicyBtn'); });
+      document.getElementById('termsServiceBtn').addEventListener('click', function(){ openPolicyModal('termsServiceModal', 'termsServiceBtn'); });
+      // close modal on background click
+      document.getElementById('privacyPolicyModal').addEventListener('click', function(e){
+        if (e.target === this) closePolicyModal('privacyPolicyModal');
+      });
+      document.getElementById('termsServiceModal').addEventListener('click', function(e){
+        if (e.target === this) closePolicyModal('termsServiceModal');
+      });
+    });
+  </script>
 </body>
 </html>
