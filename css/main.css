@@ -320,17 +320,19 @@ body {
     flex-direction: column;
     min-height: auto;
     max-height: none;
+    padding-top: 2rem; /* Add spacing to clear sticky header */
   }
   
   .hero-side {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem; /* Reduced top padding since section has it */
     min-height: auto;
     max-height: none;
   }
   
   .hero-headline {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
+    font-size: 3rem; /* Make it clearly visible */
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   
   .hero-subhead {
