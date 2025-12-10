@@ -4,429 +4,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EasternLabs — A Studio for Digital Craft</title>
-  <meta name="description" content="EasternLabs is a creative software studio building tools like SolidNote—simple, intuitive apps for professionals.">
+  <meta name="description" content="EasternLabs builds modern, intelligent tools like SolidNote and DreamLock for professionals.">
   <link rel="icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=VT323&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto Mono', monospace;
-      background-color: #fafafa;
-      color: #222;
-    }
-    .font-display {
-      font-family: 'VT323', monospace;
-    }
-    .blinking-cursor {
-      animation: blink 1s step-start infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    @keyframes rotateWords {
-      0% { opacity: 0; }
-      5% { opacity: 1; }
-      25% { opacity: 1; }
-      30% { opacity: 0; }
-      100% { opacity: 0; }
-    }
-    .rotating-word {
-      display: inline-block;
-      animation: rotateWords 12s infinite;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0;
-    }
-    .rotating-word:nth-child(1) { animation-delay: 0s; }
-    .rotating-word:nth-child(2) { animation-delay: 3s; }
-    .rotating-word:nth-child(3) { animation-delay: 6s; }
-    .rotating-word:nth-child(4) { animation-delay: 9s; }
-    .rotating-words-wrapper {
-      display: inline-block;
-      position: relative;
-      height: 1.25em;
-      min-width: 180px;
-    }
-
-    .notebook-style {
-      background-color: #fff8dc;
-      background-image: repeating-linear-gradient(to bottom, #fff8dc, #fff8dc 23px, #e5e7eb 24px);
-      border: 1px solid #e5e7eb;
-      border-left: 4px solid #d97706;
-      padding: 1.5rem;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-      line-height: 24px;
-      font-size: 16px;
-    }
-    .notebook-style p, .notebook-style h2 {
-      line-height: 24px;
-      margin: 0;
-    }
-    details > div {
-      line-height: 1.6;
-    }
-    /* Enhance visibility for footer policy links */
-    .footer-policies-bar {
-      background: #fff8dc;
-      border-top: 2px dashed #d97706;
-      border-bottom: 2px dashed #e5e7eb;
-      position: sticky;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      z-index: 40;
-      padding: 0.5rem 0;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      font-size: 1rem;
-    }
-    @media (max-width: 640px) {
-      .footer-policies-bar {
-        flex-direction: column;
-        gap: 0.25rem;
-        align-items: center;
-      }
-    }
-    .footer-policies-bar button {
-      font-family: 'Roboto Mono', monospace;
-      background: none;
-      color: #d97706;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      padding: 0.25rem 0.5rem;
-      transition: color 0.2s;
-      border-radius: 4px;
-    }
-    .footer-policies-bar button:focus,
-    .footer-policies-bar button:hover {
-      color: #be185d;
-      text-decoration: underline;
-      outline: none;
-    }
-    .policy-modal-bg {
-      position: fixed;
-      inset: 0;
-      background: rgba(34,34,34,0.45);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .policy-modal-content {
-      background: #fff8dc;
-      border: 2px solid #e5e7eb;
-      border-radius: 12px;
-      max-width: 95vw;
-      max-height: 85vh;
-      overflow-y: auto;
-      padding: 2.5rem 2rem 2rem 2rem;
-      box-shadow: 0 4px 32px rgba(34,34,34,0.10);
-      font-size: 1rem;
-      color: #333;
-      position: relative;
-    }
-    .policy-modal-content h2 {
-      color: #be185d;
-    }
-    .policy-modal-close {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.4rem;
-      font-size: 1.5rem;
-      color: #be185d;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'VT323', monospace;
-      font-weight: bold;
-    }
-    .policy-modal-content ul {
-      margin-left: 1.5em;
-      margin-bottom: 0.75em;
-    }
-    .policy-modal-content a {
-      color: #2563eb;
-      text-decoration: underline;
-    }
-    .policy-modal-content a:hover {
-      color: #be185d;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
-<body class="p-6 sm:p-10">
-  <!-- Header -->
-  <header class="text-center mb-16">
-    <h1 class="font-display text-6xl text-blue-800 tracking-widest">EasternLabs</h1>
-    <p class="mt-2 text-lg italic">A Studio for Digital Craft</p>
-  </header>
+<body>
 
-  <!-- Intro / Philosophy -->
-  <section class="max-w-2xl mx-auto text-center mb-20">
-    <p class="leading-relaxed text-base md:text-lg">
-      EasternLabs creates tools that are human-first, durable, and quietly powerful.
+  <!-- Unified Navigation -->
+  <nav class="main-nav">
+    <a href="/" class="nav-brand">EasternLabs</a>
+    <div class="nav-links">
+      <a href="#solidnote" class="nav-link">SolidNote</a>
+      <a href="#dreamlock" class="nav-link">DreamLock</a>
+      <a href="mailto:support@easternlabs.app" class="btn-login">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Split Hero Section -->
+  <main class="split-hero">
+    <!-- SolidNote Side (Left) -->
+    <div class="hero-side side-solidnote" id="hero-solidnote">
+      <h2 class="hero-headline">SolidNote</h2>
+      <p class="hero-subhead">The fastest site audit and punch list tool for field professionals.</p>
+      
+      <img src="/img/solidnote hero.png" alt="SolidNote Dashboard" class="hero-visual-placeholder" style="object-fit: contain; border: none; background: transparent;">
+
+      <a href="#solidnote-deep-dive" class="btn-hero btn-solidnote">Explore SolidNote</a>
+    </div>
+
+    <!-- DreamLock Side (Right) -->
+    <div class="hero-side side-dreamlock" id="hero-dreamlock">
+      <h2 class="hero-headline">DreamLock</h2>
+      <p class="hero-subhead">Lock the distractions. Sleep like a pro. Level up your dreams.</p>
+      
+      <img src="/img/dreamlock hero.png" alt="DreamLock Sleep Timer" class="hero-visual-placeholder" style="object-fit: contain; border: none; background: transparent;">
+
+      <a href="#dreamlock-deep-dive" class="btn-hero btn-dreamlock">Coming Soon</a>
+    </div>
+  </main>
+
+  <!-- At a Glance / Mission -->
+  <section class="at-a-glance">
+    <h3 class="font-display text-4xl text-blue-800 mb-8">A Studio for Digital Craft</h3>
+    <p class="mission-text">
+      EasternLabs exists to explore the relationship between our objective reality and the tools we use to shape it. We empower our users to master their environment, providing clarity and command over their productivity and well-being.
     </p>
   </section>
 
-  <!-- Project Highlight -->
-  <section class="max-w-2xl mx-auto rounded-md notebook-style mb-20">
-    <h2 class="font-display text-3xl text-center mb-4">SolidNote 📋</h2>
-    <p class="text-base leading-relaxed text-center">
-      SolidNote is for 
-      <span class="rotating-words-wrapper">
-        <span class="rotating-word">project managers</span>
-        <span class="rotating-word">security managers</span>
-        <span class="rotating-word">technicians</span>
-        <span class="rotating-word">field engineers</span>
-      </span> 
-      on the move. Capture annotated site photos, log issues, and auto generate PDFs to share with your team in seconds. 📷📝
-    </p>
+  <!-- SolidNote Deep Dive -->
+  <section id="solidnote-deep-dive" class="product-block bg-white">
+    <div class="block-container">
+      <div class="block-content">
+        <h2 class="product-title">SolidNote 📋</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          Capture annotated site photos, log issues, and auto-generate PDFs to share with your team in seconds.
+        </p>
+        <ul class="feature-list text-gray-600">
+          <li>Rapid-fire punch list creation</li>
+          <li>Instant photo annotation</li>
+          <li>Offline-first capability</li>
+          <li>Professional PDF report generation</li>
+        </ul>
+        <div class="mt-8">
+           <!-- App Store Sticker Integration -->
+           <a href="https://apps.apple.com/us/app/solidnote/id6749011002" class="app-store-sticker" target="_blank" rel="noopener noreferrer" style="display:inline-flex; transform:none; margin:0; background: #fff8dc;">
+            <svg viewBox="0 0 384 512" fill="url(#rainbow)">
+              <defs>
+                <linearGradient id="rainbow" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#61BB46" />
+                  <stop offset="16.6%" style="stop-color:#61BB46" />
+                  <stop offset="16.6%" style="stop-color:#FDB827" />
+                  <stop offset="33.3%" style="stop-color:#FDB827" />
+                  <stop offset="33.3%" style="stop-color:#F5821F" />
+                  <stop offset="50%" style="stop-color:#F5821F" />
+                  <stop offset="50%" style="stop-color:#E03A3E" />
+                  <stop offset="66.6%" style="stop-color:#E03A3E" />
+                  <stop offset="66.6%" style="stop-color:#963D97" />
+                  <stop offset="83.3%" style="stop-color:#963D97" />
+                  <stop offset="83.3%" style="stop-color:#009DDC" />
+                  <stop offset="100%" style="stop-color:#009DDC" />
+                </linearGradient>
+              </defs>
+              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 46.9 126.7 89.8 126.7 19.6 0 28.5-12.9 57.1-12.9 28.7 0 34.6 12.9 57.1 12.9 45.4 0 74-103.8 86.8-134.3-39.8-15.6-50.5-49.2-50.5-78.4zM224 53.8c18.4-23.7 34.6-53.8 28.9-85.3-25.5 2.1-57.1 16.7-77 40.5-17.2 20.6-32.2 54.1-27 82.3 28.3 2.1 57.3-15.3 75.1-37.5z"/>
+            </svg>
+            <div class="app-store-sticker-text">
+              <span class="app-store-sticker-subtitle">Download on the</span>
+              <span class="app-store-sticker-title">App Store</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="block-visual">
+        <img src="/img/solidnote hero2.png" alt="SolidNote Action Shot" class="block-visual-img">
+      </div>
+    </div>
   </section>
 
-  <!-- Visual Separator -->
-  <div class="text-center text-xs tracking-widest text-gray-500 mb-20">
-    —––   <span class="font-display text-pink-600">WE MAKE TOOLS</span>   ––––
-  </div>
+  <!-- DreamLock Deep Dive -->
+  <section id="dreamlock-deep-dive" class="product-block bg-slate-900 text-white" style="background-color: #1e293b;">
+    <div class="block-container reverse" style="flex-direction: row-reverse;">
+      <div class="block-content">
+        <h2 class="product-title" style="color: #60a5fa;">DreamLock 🌙</h2>
+        <p class="text-lg text-gray-300 mb-6">
+          Turn your downtime into game time. DreamLock blocks the doomscrolling apps (TikTok, Insta, X) so you can actually sleep. The longer you snooze, the more "Dream Dust" you earn to upgrade your character.
+        </p>
+        <ul class="feature-list text-gray-300">
+          <li>App Blocking: Say goodbye to late-night doomscrolling.</li>
+          <li>Earn Dream Dust: Get rewarded for every hour you sleep.</li>
+          <li>Character Progression: Use your dust to buy gear and evolve.</li>
+          <li>Set & Forget: Set your wake-up time and drift off.</li>
+        </ul>
+        <div class="mt-8">
+          <a href="#" class="btn-hero btn-dreamlock">Coming Soon</a>
+        </div>
+      </div>
+      <div class="block-visual">
+        <img src="/img/dreamlock hero2.png" alt="DreamLock Character & App Blocker" class="block-visual-img">
+      </div>
+    </div>
+  </section>
 
-  <!-- Contact Section -->
-  <footer class="text-center border-t-2 border-dashed border-gray-300 pt-10">
-    <p class="text-lg mb-1">Say Hello</p>
-    <a href="mailto:support@easternlabs.app" class="text-blue-700 underline hover:text-pink-500">support@easternlabs.app</a>
-    <p class="text-xs text-gray-400 mt-10">© 2025 EasternLabs. All rights reserved.</p>
+  <!-- Consolidated Footer -->
+  <footer class="main-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>EasternLabs</h4>
+        <p>A Studio for Digital Craft.</p>
+        <p>Building tools that respect your attention and data.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#solidnote">SolidNote</a></li>
+          <li><a href="#dreamlock">DreamLock</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:support@easternlabs.app">Contact Us</a></li>
+          <li><a href="#">Twitter/X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 EasternLabs. All rights reserved.</p>
+    </div>
   </footer>
 
-  <!-- Policies Footer Bar (ALWAYS visible & prominent) -->
-  <div class="footer-policies-bar" id="footerPoliciesBar">
-    <button id="privacyPolicyBtn" aria-controls="privacyPolicyModal" aria-expanded="false">
-      Privacy Policy
-    </button>
-    <button id="termsServiceBtn" aria-controls="termsServiceModal" aria-expanded="false">
-      Terms of Service
-    </button>
-  </div>
-
-  <!-- Privacy Policy Modal -->
-  <div id="privacyPolicyModal" class="policy-modal-bg" style="display:none;">
-    <div class="policy-modal-content" role="dialog" aria-modal="true" aria-labelledby="privacyPolicyTitle">
-      <button class="policy-modal-close" aria-label="Close Privacy Policy" onclick="closePolicyModal('privacyPolicyModal')">&times;</button>
-      <h2 id="privacyPolicyTitle" class="text-lg font-bold text-gray-900">Privacy Policy for SolidNote</h2>
-      <p><strong>Last updated:</strong> July 2025</p>
-
-      <h3 class="font-bold text-gray-900">Introduction</h3>
-      <p>SolidNote ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
-
-      <h3 class="font-bold text-gray-900">Information We Collect</h3>
-      <h4 class="font-semibold">Information You Provide</h4>
-      <ul class="list-disc list-inside">
-        <li>Project and issue data you create within the app</li>
-        <li>Photos you take and store within the app</li>
-        <li>Account information (if you choose to create an account)</li>
-      </ul>
-
-      <h4 class="font-semibold">Automatically Collected Information</h4>
-      <ul class="list-disc list-inside">
-        <li>Device information (device type, operating system version)</li>
-        <li>App usage statistics</li>
-        <li>Crash reports and performance data</li>
-      </ul>
-
-      <h4 class="font-semibold">Subscription Information</h4>
-      <ul class="list-disc list-inside">
-        <li>Payment information (processed securely through Apple/Google)</li>
-        <li>Subscription status and renewal dates</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">How We Use Your Information</h3>
-      <ul class="list-disc list-inside">
-        <li>Provide and maintain the SolidNote service</li>
-        <li>Process your subscription payments</li>
-        <li>Improve our app functionality and user experience</li>
-        <li>Send you important updates about the app</li>
-        <li>Provide customer support</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">Data Storage and Security</h3>
-      <h4 class="font-semibold">Local Storage</h4>
-      <ul class="list-disc list-inside">
-        <li>Your project data and photos are stored locally on your device</li>
-        <li>We do not have access to your local data unless you explicitly share it</li>
-      </ul>
-
-      <h4 class="font-semibold">Cloud Storage (Coming Soon)</h4>
-      <ul class="list-disc list-inside">
-        <li>When cloud sync is implemented, your data will be encrypted and stored securely</li>
-        <li>You will have control over what data is synced</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">Third-Party Services</h3>
-      <h4 class="font-semibold">RevenueCat</h4>
-      <ul class="list-disc list-inside">
-        <li>We use RevenueCat to manage subscriptions</li>
-        <li>RevenueCat processes payment information according to their privacy policy</li>
-        <li>No personal data is shared with RevenueCat beyond what's necessary for subscription management</li>
-      </ul>
-
-      <h4 class="font-semibold">Apple/Google</h4>
-      <ul class="list-disc list-inside">
-        <li>Payment processing is handled by Apple App Store or Google Play Store</li>
-        <li>These platforms have their own privacy policies governing payment data</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">Your Rights</h3>
-      <ul class="list-disc list-inside">
-        <li>Access your personal data</li>
-        <li>Request deletion of your data</li>
-        <li>Opt out of data collection (where applicable)</li>
-        <li>Cancel your subscription at any time</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">Children's Privacy</h3>
-      <p>SolidNote is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
-
-      <h3 class="font-bold text-gray-900">Changes to This Policy</h3>
-      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app.</p>
-
-      <h3 class="font-bold text-gray-900">Contact Us</h3>
-      <p>If you have questions about this Privacy Policy, please contact us at:</p>
-      <ul class="list-disc list-inside">
-        <li>Email: <a href="mailto:support@easternlabs.app" class="text-blue-700 underline">support@easternlabs.app</a></li>
-        <li>Website: <a href="https://easternlabs.app" class="text-blue-700 underline" target="_blank">https://easternlabs.app</a></li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">Data Retention</h3>
-      <ul class="list-disc list-inside">
-        <li>Local data is retained until you delete it or uninstall the app</li>
-        <li>Subscription data is retained as required by law and for billing purposes</li>
-        <li>You can request deletion of your data at any time</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">International Users</h3>
-      <p>If you are using SolidNote from outside the United States, please note that your information may be transferred to and processed in the United States, where our servers are located.</p>
-    </div>
-  </div>
-
-  <!-- Terms of Service Modal -->
-  <div id="termsServiceModal" class="policy-modal-bg" style="display:none;">
-    <div class="policy-modal-content" role="dialog" aria-modal="true" aria-labelledby="termsServiceTitle">
-      <button class="policy-modal-close" aria-label="Close Terms of Service" onclick="closePolicyModal('termsServiceModal')">&times;</button>
-      <h2 id="termsServiceTitle" class="text-lg font-bold text-gray-900">Terms of Service for SolidNote</h2>
-      <p><strong>Last updated:</strong> July 2025</p>
-
-      <h3 class="font-bold text-gray-900">Agreement to Terms</h3>
-      <p>By downloading, installing, or using the SolidNote mobile application ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
-
-      <h3 class="font-bold text-gray-900">Description of Service</h3>
-      <p>SolidNote is a mobile application designed for site walks, inspections, and project management. The App allows users to:</p>
-      <ul class="list-disc list-inside">
-        <li>Create and manage projects</li>
-        <li>Document issues with photos and notes</li>
-        <li>Generate reports</li>
-        <li>Store data locally on your device</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">Subscription Services</h3>
-      <h4 class="font-semibold">Free Plan</h4>
-      <ul class="list-disc list-inside">
-        <li>Limited number of projects</li>
-        <li>Limited photos per issue</li>
-        <li>Basic functionality</li>
-      </ul>
-
-      <h4 class="font-semibold">Pro Plan</h4>
-      <ul class="list-disc list-inside">
-        <li>Unlimited projects</li>
-        <li>Unlimited photos per issue</li>
-        <li>Cloud sync and backup (coming soon)</li>
-        <li>Advanced PDF reports (coming soon)</li>
-      </ul>
-
-      <h4 class="font-semibold">Subscription Terms</h4>
-      <ul class="list-disc list-inside">
-        <li>Subscriptions automatically renew unless cancelled</li>
-        <li>You can cancel at any time through your device's subscription settings</li>
-        <li>Prices may change with notice</li>
-        <li>Refunds are subject to Apple/Google's refund policies</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">User Responsibilities</h3>
-      <ul class="list-disc list-inside">
-        <li>Use the App only for lawful purposes</li>
-        <li>Not attempt to reverse engineer or modify the App</li>
-        <li>Not use the App to store illegal or harmful content</li>
-        <li>Maintain the security of your device and data</li>
-        <li>Back up your data regularly</li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">Intellectual Property</h3>
-      <p>The App and its content are owned by SolidNote and protected by copyright and other intellectual property laws. You retain ownership of the data you create within the App.</p>
-
-      <h3 class="font-bold text-gray-900">Privacy</h3>
-      <p>Your privacy is important to us. Please review our Privacy Policy, which is incorporated into these Terms by reference.</p>
-
-      <h3 class="font-bold text-gray-900">Disclaimers</h3>
-      <p>THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
-
-      <h3 class="font-bold text-gray-900">Limitation of Liability</h3>
-      <p>IN NO EVENT SHALL SOLIDNOTE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR USE.</p>
-
-      <h3 class="font-bold text-gray-900">Data Loss</h3>
-      <p>While we strive to protect your data, we cannot guarantee that data will not be lost. You are responsible for backing up your data regularly.</p>
-
-      <h3 class="font-bold text-gray-900">Termination</h3>
-      <p>We may terminate or suspend your access to the App at any time, with or without cause, with or without notice.</p>
-
-      <h3 class="font-bold text-gray-900">Changes to Terms</h3>
-      <p>We may modify these Terms at any time. We will notify you of significant changes through the App or by email.</p>
-
-      <h3 class="font-bold text-gray-900">Governing Law</h3>
-      <p>These Terms are governed by the laws of the United States, without regard to conflict of law principles.</p>
-
-      <h3 class="font-bold text-gray-900">Contact Information</h3>
-      <ul class="list-disc list-inside">
-        <li>Email: <a href="mailto:support@easternlabs.app" class="text-blue-700 underline">support@easternlabs.app</a></li>
-        <li>Website: <a href="https://easternlabs.app" class="text-blue-700 underline" target="_blank">https://easternlabs.app</a></li>
-      </ul>
-
-      <h3 class="font-bold text-gray-900">Severability</h3>
-      <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
-
-      <h3 class="font-bold text-gray-900">Entire Agreement</h3>
-      <p>These Terms constitute the entire agreement between you and SolidNote regarding the use of the App.</p>
-    </div>
-  </div>
-
-  <script>
-    function openPolicyModal(modalId, btnId) {
-      document.getElementById(modalId).style.display = 'flex';
-      document.getElementById(btnId).setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-    function closePolicyModal(modalId) {
-      document.getElementById(modalId).style.display = 'none';
-      document.getElementById('privacyPolicyBtn').setAttribute('aria-expanded', 'false');
-      document.getElementById('termsServiceBtn').setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-    // Accessibility: close modal on Esc key
-    document.addEventListener('keydown', function(evt) {
-      if ((evt.key === 'Escape' || evt.key === 'Esc')) {
-        if(document.getElementById('privacyPolicyModal').style.display === 'flex') closePolicyModal('privacyPolicyModal');
-        if(document.getElementById('termsServiceModal').style.display === 'flex') closePolicyModal('termsServiceModal');
-      }
-    });
-    // Button event listeners
-    document.addEventListener('DOMContentLoaded', function(){
-      document.getElementById('privacyPolicyBtn').addEventListener('click', function(){ openPolicyModal('privacyPolicyModal', 'privacyPolicyBtn'); });
-      document.getElementById('termsServiceBtn').addEventListener('click', function(){ openPolicyModal('termsServiceModal', 'termsServiceBtn'); });
-      // close modal on background click
-      document.getElementById('privacyPolicyModal').addEventListener('click', function(e){
-        if (e.target === this) closePolicyModal('privacyPolicyModal');
-      });
-      document.getElementById('termsServiceModal').addEventListener('click', function(e){
-        if (e.target === this) closePolicyModal('termsServiceModal');
-      });
-    });
-  </script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
