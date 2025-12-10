@@ -42,5 +42,43 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('termsServiceModal').addEventListener('click', function (e) {
     if (e.target === this) closePolicyModal('termsServiceModal');
   });
+
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+  
+  function toggleMobileMenu() {
+    const isActive = navLinks.classList.contains('active');
+    mobileMenuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    if (mobileMenuBackdrop) {
+      mobileMenuBackdrop.classList.toggle('active');
+    }
+    document.body.style.overflow = !isActive ? 'hidden' : '';
+  }
+  
+  function closeMobileMenu() {
+    mobileMenuToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+    if (mobileMenuBackdrop) {
+      mobileMenuBackdrop.classList.remove('active');
+    }
+    document.body.style.overflow = '';
+  }
+  
+  if (mobileMenuToggle && navLinks) {
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    
+    if (mobileMenuBackdrop) {
+      mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close menu when clicking on a link
+    const navLinkItems = navLinks.querySelectorAll('a');
+    navLinkItems.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
 });
 

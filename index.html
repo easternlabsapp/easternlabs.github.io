@@ -15,7 +15,7 @@
   <!-- Unified Navigation -->
   <nav class="main-nav">
     <a href="/" class="nav-brand">EasternLabs</a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#solidnote" class="nav-link">SolidNote</a>
       <a href="#dreamlock" class="nav-link">DreamLock</a>
       <a href="mailto:support@easternlabs.app" class="btn-login">Contact</a>
@@ -70,25 +70,6 @@
         <div class="mt-8">
            <!-- App Store Sticker Integration -->
            <a href="https://apps.apple.com/us/app/solidnote/id6749011002" class="app-store-sticker" target="_blank" rel="noopener noreferrer" style="display:inline-flex; transform:none; margin:0; background: #fff8dc;">
-            <svg viewBox="0 0 384 512" fill="url(#rainbow)">
-              <defs>
-                <linearGradient id="rainbow" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style="stop-color:#61BB46" />
-                  <stop offset="16.6%" style="stop-color:#61BB46" />
-                  <stop offset="16.6%" style="stop-color:#FDB827" />
-                  <stop offset="33.3%" style="stop-color:#FDB827" />
-                  <stop offset="33.3%" style="stop-color:#F5821F" />
-                  <stop offset="50%" style="stop-color:#F5821F" />
-                  <stop offset="50%" style="stop-color:#E03A3E" />
-                  <stop offset="66.6%" style="stop-color:#E03A3E" />
-                  <stop offset="66.6%" style="stop-color:#963D97" />
-                  <stop offset="83.3%" style="stop-color:#963D97" />
-                  <stop offset="83.3%" style="stop-color:#009DDC" />
-                  <stop offset="100%" style="stop-color:#009DDC" />
-                </linearGradient>
-              </defs>
-              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 46.9 126.7 89.8 126.7 19.6 0 28.5-12.9 57.1-12.9 28.7 0 34.6 12.9 57.1 12.9 45.4 0 74-103.8 86.8-134.3-39.8-15.6-50.5-49.2-50.5-78.4zM224 53.8c18.4-23.7 34.6-53.8 28.9-85.3-25.5 2.1-57.1 16.7-77 40.5-17.2 20.6-32.2 54.1-27 82.3 28.3 2.1 57.3-15.3 75.1-37.5z"/>
-            </svg>
             <div class="app-store-sticker-text">
               <span class="app-store-sticker-subtitle">Download on the</span>
               <span class="app-store-sticker-title">App Store</span>
@@ -104,15 +85,15 @@
 
   <!-- DreamLock Deep Dive -->
   <section id="dreamlock-deep-dive" class="product-block bg-slate-900 text-white" style="background-color: #1e293b;">
-    <div class="block-container reverse" style="flex-direction: row-reverse;">
+    <div class="block-container reverse">
       <div class="block-content">
         <h2 class="product-title" style="color: #60a5fa;">DreamLock 🌙</h2>
         <p class="text-lg text-gray-300 mb-6">
-          Turn your downtime into game time. DreamLock blocks the doomscrolling apps (TikTok, Insta, X) so you can actually sleep. The longer you snooze, the more "Dream Dust" you earn to upgrade your character.
+          DreamLock blocks the doomscrolling apps of your choice so you can actually sleep. The longer you snooze, the more Dream Dust you earn to upgrade your character.
         </p>
         <ul class="feature-list text-gray-300">
           <li>App Blocking: Say goodbye to late-night doomscrolling.</li>
-          <li>Earn Dream Dust: Get rewarded for every hour you sleep.</li>
+          <li>Earn Dream Dust: Get rewarded for better quality sleep.</li>
           <li>Character Progression: Use your dust to buy gear and evolve.</li>
           <li>Set & Forget: Set your wake-up time and drift off.</li>
         </ul>
@@ -132,7 +113,6 @@
       <div class="footer-col">
         <h4>EasternLabs</h4>
         <p>A Studio for Digital Craft.</p>
-        <p>Building tools that respect your attention and data.</p>
       </div>
       <div class="footer-col">
         <h4>Products</h4>
