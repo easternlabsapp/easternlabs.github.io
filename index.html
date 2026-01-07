@@ -126,8 +126,9 @@
         <h4>Resources</h4>
         <ul>
           <li><a href="#">Support</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#" id="solidNotePrivacyBtn">SolidNote Privacy Policy</a></li>
+          <li><a href="#" id="privacyPolicyBtn">DreamLock Privacy Policy</a></li>
+          <li><a href="#" id="termsServiceBtn">Terms of Service</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -143,6 +144,186 @@
     </div>
   </footer>
 
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js?v=2"></script>
+
+  <!-- Modals -->
+  <div id="privacyPolicyModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="privacyPolicyTitle">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Close modal" onclick="closePolicyModal('privacyPolicyModal')">&times;</button>
+      <div class="policy-text">
+        <h2 id="privacyPolicyTitle">Privacy Policy</h2>
+        <p><strong>Last Updated:</strong> December 28, 2025</p>
+
+        <h3>Information We Collect</h3>
+        <p>DreamLock collects minimal data necessary to provide sleep tracking and app blocking services. This includes:</p>
+        <ul>
+          <li>Sleep session data (duration, timestamps)</li>
+          <li>App blocking preferences</li>
+          <li>Subscription status (managed by RevenueCat)</li>
+        </ul>
+        <p>All data is stored locally on your device using UserDefaults with App Groups.</p>
+
+        <h3>How We Use Your Information</h3>
+        <p>Your data is used solely to:</p>
+        <ul>
+          <li>Track sleep sessions and calculate rewards</li>
+          <li>Manage app blocking preferences</li>
+          <li>Provide subscription services</li>
+        </ul>
+        <p>We do not sell, rent, or share your personal data with third parties.</p>
+
+        <h3>Data Storage</h3>
+        <p>All sleep tracking and user preference data is stored locally on your device. We use Apple's Screen Time API for app blocking, which operates entirely on-device. Subscription data is managed by RevenueCat in accordance with their privacy policy.</p>
+
+        <h3>Third-Party Services</h3>
+        <p>DreamLock uses:</p>
+        <ul>
+          <li>RevenueCat for subscription management</li>
+          <li>Apple Screen Time API for app blocking</li>
+        </ul>
+        <p>These services have their own privacy policies. We recommend reviewing them.</p>
+
+        <h3>Your Rights</h3>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your data (stored locally on your device)</li>
+          <li>Delete your data by uninstalling the app</li>
+          <li>Manage subscriptions through your Apple ID settings</li>
+          <li>Request information about data practices</li>
+        </ul>
+
+        <h3>Children's Privacy</h3>
+        <p>DreamLock is not intended for users under 13 years of age. We do not knowingly collect personal information from children.</p>
+
+        <h3>Changes to This Policy</h3>
+        <p>We may update this Privacy Policy from time to time. Changes will be reflected in the app and the "Last Updated" date will be revised.</p>
+
+        <h3>Contact Us</h3>
+        <p>If you have questions about this Privacy Policy, please contact us at:</p>
+        <p>
+          <strong>EasternLabs</strong><br>
+          <a href="mailto:support@easternlabs.app" style="color: var(--color-eastern-blue);">support@easternlabs.app</a><br>
+          <a href="https://easternlabs.app" style="color: var(--color-eastern-blue);">easternlabs.app</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="solidNotePrivacyModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="solidNotePrivacyTitle">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Close modal" onclick="closePolicyModal('solidNotePrivacyModal')">&times;</button>
+      <div class="policy-text">
+        <h2 id="solidNotePrivacyTitle">Privacy Policy for SolidNote</h2>
+        <p><strong>Last updated:</strong> July 2025</p>
+
+        <h3>Introduction</h3>
+        <p>SolidNote ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+
+        <h3>Information We Collect</h3>
+        
+        <h4>Information You Provide</h4>
+        <ul>
+          <li>Project and issue data you create within the app</li>
+          <li>Photos you take and store within the app</li>
+          <li>Account information (if you choose to create an account)</li>
+        </ul>
+
+        <h4>Automatically Collected Information</h4>
+        <ul>
+          <li>Device information (device type, operating system version)</li>
+          <li>App usage statistics</li>
+          <li>Crash reports and performance data</li>
+        </ul>
+
+        <h4>Subscription Information</h4>
+        <ul>
+          <li>Payment information (processed securely through Apple/Google)</li>
+          <li>Subscription status and renewal dates</li>
+        </ul>
+
+        <h3>How We Use Your Information</h3>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide and maintain the SolidNote service</li>
+          <li>Process your subscription payments</li>
+          <li>Improve our app functionality and user experience</li>
+          <li>Send you important updates about the app</li>
+          <li>Provide customer support</li>
+        </ul>
+
+        <h3>Data Storage and Security</h3>
+
+        <h4>Local Storage</h4>
+        <ul>
+          <li>Your project data and photos are stored locally on your device</li>
+          <li>We do not have access to your local data unless you explicitly share it</li>
+        </ul>
+
+        <h4>Cloud Storage (Coming Soon)</h4>
+        <ul>
+          <li>When cloud sync is implemented, your data will be encrypted and stored securely</li>
+          <li>You will have control over what data is synced</li>
+        </ul>
+
+        <h3>Third-Party Services</h3>
+
+        <h4>RevenueCat</h4>
+        <ul>
+          <li>We use RevenueCat to manage subscriptions</li>
+          <li>RevenueCat processes payment information according to their privacy policy</li>
+          <li>No personal data is shared with RevenueCat beyond what's necessary for subscription management</li>
+        </ul>
+
+        <h4>Apple/Google</h4>
+        <ul>
+          <li>Payment processing is handled by Apple App Store or Google Play Store</li>
+          <li>These platforms have their own privacy policies governing payment data</li>
+        </ul>
+
+        <h3>Your Rights</h3>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your personal data</li>
+          <li>Request deletion of your data</li>
+          <li>Opt out of data collection (where applicable)</li>
+          <li>Cancel your subscription at any time</li>
+        </ul>
+
+        <h3>Children's Privacy</h3>
+        <p>SolidNote is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+        <h3>Changes to This Policy</h3>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app.</p>
+
+        <h3>Contact Us</h3>
+        <p>If you have questions about this Privacy Policy, please contact us at:</p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:support@easternlabs.app" style="color: var(--color-eastern-blue);">support@easternlabs.app</a><br>
+          <strong>Website:</strong> <a href="https://easternlabs.app" style="color: var(--color-eastern-blue);">https://easternlabs.app</a>
+        </p>
+
+        <h3>Data Retention</h3>
+        <ul>
+          <li>Local data is retained until you delete it or uninstall the app</li>
+          <li>Subscription data is retained as required by law and for billing purposes</li>
+          <li>You can request deletion of your data at any time</li>
+        </ul>
+
+        <h3>International Users</h3>
+        <p>If you are using SolidNote from outside the United States, please note that your information may be transferred to and processed in the United States, where our servers are located.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="termsServiceModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="termsServiceTitle">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Close modal" onclick="closePolicyModal('termsServiceModal')">&times;</button>
+      <div class="policy-text">
+        <h2 id="termsServiceTitle">Terms of Service</h2>
+        <p>Content coming soon...</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -8,6 +8,7 @@ function openPolicyModal(modalId, btnId) {
 function closePolicyModal(modalId) {
   document.getElementById(modalId).style.display = 'none';
   document.getElementById('privacyPolicyBtn').setAttribute('aria-expanded', 'false');
+  document.getElementById('solidNotePrivacyBtn').setAttribute('aria-expanded', 'false');
   document.getElementById('termsServiceBtn').setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
@@ -17,6 +18,8 @@ document.addEventListener('keydown', function (evt) {
   if (evt.key === 'Escape' || evt.key === 'Esc') {
     if (document.getElementById('privacyPolicyModal').style.display === 'flex')
       closePolicyModal('privacyPolicyModal');
+    if (document.getElementById('solidNotePrivacyModal').style.display === 'flex')
+      closePolicyModal('solidNotePrivacyModal');
     if (document.getElementById('termsServiceModal').style.display === 'flex')
       closePolicyModal('termsServiceModal');
   }
@@ -30,6 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
       openPolicyModal('privacyPolicyModal', 'privacyPolicyBtn');
     });
 
+  document
+    .getElementById('solidNotePrivacyBtn')
+    .addEventListener('click', function () {
+      openPolicyModal('solidNotePrivacyModal', 'solidNotePrivacyBtn');
+    });
+
   document.getElementById('termsServiceBtn').addEventListener('click', function () {
     openPolicyModal('termsServiceModal', 'termsServiceBtn');
   });
@@ -37,6 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Close modal on background click
   document.getElementById('privacyPolicyModal').addEventListener('click', function (e) {
     if (e.target === this) closePolicyModal('privacyPolicyModal');
+  });
+
+  document.getElementById('solidNotePrivacyModal').addEventListener('click', function (e) {
+    if (e.target === this) closePolicyModal('solidNotePrivacyModal');
   });
 
   document.getElementById('termsServiceModal').addEventListener('click', function (e) {
