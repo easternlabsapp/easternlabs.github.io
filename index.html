@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EasternLabs — A Studio for Digital Craft</title>
-  <meta name="description" content="EasternLabs builds modern, intelligent tools like SolidNote and DreamLock for professionals.">
+  <meta name="description" content="EasternLabs builds modern, intelligent tools for professionals. SolidNote is our flagship app for site audits and punch lists.">
   <link rel="icon" type="image/png" href="/img/favicon.png">
   <link rel="apple-touch-icon" href="/img/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,42 +17,42 @@
   <nav class="main-nav">
     <a href="/" class="nav-brand">EasternLabs</a>
     <div class="nav-links" id="navLinks">
-      <a href="#solidnote" class="nav-link">SolidNote</a>
-      <a href="#dreamlock" class="nav-link">DreamLock</a>
+      <a href="#solidnote-deep-dive" class="nav-link">SolidNote</a>
       <a href="mailto:support@easternlabs.app" class="btn-login">Contact</a>
     </div>
   </nav>
 
-  <!-- Split Hero Section -->
-  <main class="split-hero">
-    <!-- SolidNote Side (Left) -->
-    <div class="hero-side side-solidnote" id="hero-solidnote">
-      <h2 class="hero-headline">SolidNote</h2>
-      <p class="hero-subhead">The fastest site audit and punch list tool for field professionals.</p>
-      
-      <img src="/img/solidnote hero.png" alt="SolidNote Dashboard" class="hero-visual-placeholder" style="object-fit: contain; border: none; background: transparent;">
-
-      <a href="#solidnote-deep-dive" class="btn-hero btn-solidnote">Explore SolidNote</a>
-    </div>
-
-    <!-- DreamLock Side (Right) -->
-    <div class="hero-side side-dreamlock" id="hero-dreamlock">
-      <h2 class="hero-headline">DreamLock</h2>
-      <p class="hero-subhead">Lock the distractions. Sleep like a pro. Level up your dreams.</p>
-      
-      <img src="/img/dreamlock hero.png" alt="DreamLock Sleep Timer" class="hero-visual-placeholder" style="object-fit: contain; border: none; background: transparent;">
-
-      <a href="#dreamlock-deep-dive" class="btn-hero btn-dreamlock">Coming Soon</a>
+  <!-- Welcome Hero Section -->
+  <main class="hero-section bg-gradient-to-b from-blue-50 to-white py-16 px-6 text-center">
+    <h1 class="text-5xl md:text-6xl font-bold text-blue-900 mb-4">A Studio for Digital Craft</h1>
+    <p class="text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
+      EasternLabs builds modern, intelligent tools that empower professionals to master their environment with clarity and command.
+    </p>
+    
+    <!-- Featured Product Highlight -->
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+          <div class="flex flex-col justify-center">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">SolidNote 📋</h2>
+            <p class="text-lg text-gray-700 mb-6">
+              The fastest site audit and punch list tool for field professionals.
+            </p>
+            <p class="text-gray-600 mb-8">
+              Capture annotated site photos, log issues, and auto-generate PDFs in seconds. Our flagship app is built for professionals who demand speed and precision.
+            </p>
+            <div class="flex gap-4">
+              <a href="#solidnote-deep-dive" class="btn-hero btn-solidnote">Explore SolidNote</a>
+              <a href="https://apps.apple.com/us/app/solidnote/id6749011002" class="btn-hero" style="background-color: #000; color: white;" target="_blank" rel="noopener noreferrer">Download on App Store</a>
+            </div>
+          </div>
+          <div class="flex items-center justify-center">
+            <img src="/img/solidnote hero.png" alt="SolidNote Dashboard" class="w-full h-auto" style="object-fit: contain; border: none; background: transparent;">
+          </div>
+        </div>
+      </div>
     </div>
   </main>
-
-  <!-- At a Glance / Mission -->
-  <section class="at-a-glance">
-    <h3 class="font-display text-4xl text-blue-800 mb-8">A Studio for Digital Craft</h3>
-    <p class="mission-text">
-      EasternLabs exists to explore the relationship between our objective reality and the tools we use to shape it. We empower our users to master their environment, providing clarity and command over their productivity and well-being.
-    </p>
-  </section>
 
   <!-- SolidNote Deep Dive -->
   <section id="solidnote-deep-dive" class="product-block bg-white">
@@ -70,7 +70,7 @@
         </ul>
         <div class="mt-8">
            <!-- App Store Sticker Integration -->
-           <a href="https://apps.apple.com/us/app/solidnote/id6749011002" class="app-store-sticker" target="_blank" rel="noopener noreferrer" style="display:inline-flex; transform:none; margin:0; background: #fff8dc;">
+           <a href="https://apps.apple.com/us/app/solidnote/id6749011002" class="app-store-sticker" target="_blank" rel="noopener noreferrer" style="display:inline-flex; transform:none; margin:0;">
             <div class="app-store-sticker-text">
               <span class="app-store-sticker-subtitle">Download on the</span>
               <span class="app-store-sticker-title">App Store</span>
@@ -84,26 +84,34 @@
     </div>
   </section>
 
-  <!-- DreamLock Deep Dive -->
-  <section id="dreamlock-deep-dive" class="product-block bg-slate-900 text-white" style="background-color: #1e293b;">
-    <div class="block-container reverse">
-      <div class="block-content">
-        <h2 class="product-title" style="color: #60a5fa;">DreamLock 🌙</h2>
-        <p class="text-lg text-gray-300 mb-6">
-          DreamLock blocks the doomscrolling apps of your choice so you can actually sleep. The longer you snooze, the more Dream Dust you earn to upgrade your character.
-        </p>
-        <ul class="feature-list text-gray-300">
-          <li>App Blocking: Say goodbye to late-night doomscrolling.</li>
-          <li>Earn Dream Dust: Get rewarded for better quality sleep.</li>
-          <li>Character Progression: Use your dust to buy gear and evolve.</li>
-          <li>Set & Forget: Set your wake-up time and drift off.</li>
-        </ul>
-        <div class="mt-8">
-          <a href="#" class="btn-hero btn-dreamlock">Coming Soon</a>
+  <!-- Experiments Section -->
+  <section class="experiments-section bg-gray-50 py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">Experiments</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        We're exploring new ideas and concepts. Here are the projects we're currently working on.
+      </p>
+      
+      <!-- DreamLock Experiment Card -->
+      <div id="experiments-dreamlock" class="bg-white rounded-lg shadow-md overflow-hidden max-w-2xl mx-auto">
+        <div class="bg-gradient-to-r from-slate-800 to-slate-700 p-8">
+          <h3 class="text-3xl font-bold text-white mb-2">DreamLock 🌙</h3>
+          <p class="text-gray-200 text-lg">Lock the distractions. Sleep like a pro. Level up your dreams.</p>
         </div>
-      </div>
-      <div class="block-visual">
-        <img src="/img/dreamlock hero2.png" alt="DreamLock Character & App Blocker" class="block-visual-img">
+        <div class="p-8">
+          <p class="text-gray-700 mb-6">
+            DreamLock blocks the doomscrolling apps of your choice so you can actually sleep. The longer you snooze, the more Dream Dust you earn to upgrade your character.
+          </p>
+          <ul class="feature-list text-gray-600 mb-8">
+            <li>App Blocking: Say goodbye to late-night doomscrolling.</li>
+            <li>Earn Dream Dust: Get rewarded for better quality sleep.</li>
+            <li>Character Progression: Use your dust to buy gear and evolve.</li>
+            <li>Set & Forget: Set your wake-up time and drift off.</li>
+          </ul>
+          <div class="inline-block px-6 py-2 bg-gray-200 text-gray-700 rounded font-semibold">
+            Coming Soon
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -118,8 +126,7 @@
       <div class="footer-col">
         <h4>Products</h4>
         <ul>
-          <li><a href="#solidnote">SolidNote</a></li>
-          <li><a href="#dreamlock">DreamLock</a></li>
+          <li><a href="#solidnote-deep-dive">SolidNote</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -173,7 +180,7 @@
         <p>We do not sell, rent, or share your personal data with third parties.</p>
 
         <h3>Data Storage</h3>
-        <p>All sleep tracking and user preference data is stored locally on your device. We use Apple's Screen Time API for app blocking, which operates entirely on-device. Subscription data is managed by RevenueCat in accordance with their privacy policy.</p>
+        <p>All sleep tracking and user preference data is stored locally on your device. We use Apple's Screen Time API for app blocking, which operates entirely on-device. Subscription data is managed by RevenueCat.</p>
 
         <h3>Third-Party Services</h3>
         <p>DreamLock uses:</p>
