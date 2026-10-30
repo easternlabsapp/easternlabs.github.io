@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tapped Support &mdash; EasternLabs</title>
+  <meta name="description" content="Support and frequently asked questions for Tapped, an iOS app that summarizes US drinking-water compliance records by location.">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" href="/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue: #1e40af; --text: #1f2937; --muted: #4b5563; --rule: #e5e7eb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; overflow-wrap: break-word; background: #fafafa; color: var(--text); font-family: 'Roboto Mono', monospace; line-height: 1.7; }
+    .bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.25rem 1rem; padding: 1.1rem 1.5rem; background: #fff; border-bottom: 2px solid var(--rule); }
+    .brand { font-family: 'Archivo', sans-serif; font-weight: 900; letter-spacing: 0.04em; color: var(--blue); text-decoration: none; }
+    .bar a.contact { color: var(--muted); font-size: 0.85rem; text-decoration: none; }
+    .bar a.contact:hover, .brand:hover { text-decoration: underline; }
+    main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    h1 { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.15; margin: 0 0 0.5rem; }
+    h2 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.15rem; margin: 2.25rem 0 0.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+    p, li { font-size: 0.93rem; margin: 0.6rem 0; }
+    ul { padding-left: 1.2rem; }
+    .lead { color: var(--muted); }
+    .contact-box { margin: 1.5rem 0; padding: 1rem 1.25rem; background: #fff; border: 2px solid var(--rule); }
+    a { color: var(--blue); }
+    footer { max-width: 46rem; margin: 0 auto; padding: 1.5rem; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--rule); }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <a href="/" class="brand">EASTERNLABS</a>
+    <a class="contact" href="mailto:support@easternlabs.app">support@easternlabs.app</a>
+  </div>
+
+  <main>
+    <h1>Tapped Support</h1>
+    <p class="lead">Tapped shows a red, yellow, or green summary of US drinking-water compliance records for the place you are in. It uses public EPA records, not a fresh lab test.</p>
+
+    <div class="contact-box">
+      <strong>Need help?</strong> Email <a href="mailto:support@easternlabs.app">support@easternlabs.app</a>. Include your ZIP code and a short description, and we will reply as soon as we can.
+    </div>
+
+    <h2>About the results</h2>
+    <p>Green, yellow, and red reflect whether EPA records show recent or open health-based violations for the water system serving the area. The full rules are in the <a href="https://github.com/easternlabsapp/tapped/blob/main/docs/METHODOLOGY.md">methodology</a>.</p>
+    <p>Tapped summarizes public regulatory records. It is not a water test and does not guarantee that water is safe to drink. For concerns about your own tap, contact your local water utility or a medical professional.</p>
+
+    <h2>Privacy</h2>
+    <p>Tapped collects only the five-digit ZIP code it uses to look up records. See the <a href="/tapped/privacy/">privacy policy</a>.</p>
+  </main>
+
+  <footer>&copy; 2026 EasternLabs &middot; <a href="/tapped/privacy/">Privacy Policy</a></footer>
+</body>
+</html>
