@@ -7,7 +7,6 @@ function openPolicyModal(modalId, btnId) {
 
 function closePolicyModal(modalId) {
   document.getElementById(modalId).style.display = 'none';
-  document.getElementById('privacyPolicyBtn').setAttribute('aria-expanded', 'false');
   document.getElementById('solidNotePrivacyBtn').setAttribute('aria-expanded', 'false');
   document.getElementById('termsServiceBtn').setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
@@ -16,8 +15,6 @@ function closePolicyModal(modalId) {
 // Accessibility: close modal on Esc key
 document.addEventListener('keydown', function (evt) {
   if (evt.key === 'Escape' || evt.key === 'Esc') {
-    if (document.getElementById('privacyPolicyModal').style.display === 'flex')
-      closePolicyModal('privacyPolicyModal');
     if (document.getElementById('solidNotePrivacyModal').style.display === 'flex')
       closePolicyModal('solidNotePrivacyModal');
     if (document.getElementById('termsServiceModal').style.display === 'flex')
@@ -27,12 +24,6 @@ document.addEventListener('keydown', function (evt) {
 
 // Button event listeners
 document.addEventListener('DOMContentLoaded', function () {
-  document
-    .getElementById('privacyPolicyBtn')
-    .addEventListener('click', function () {
-      openPolicyModal('privacyPolicyModal', 'privacyPolicyBtn');
-    });
-
   document
     .getElementById('solidNotePrivacyBtn')
     .addEventListener('click', function () {
@@ -44,10 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Close modal on background click
-  document.getElementById('privacyPolicyModal').addEventListener('click', function (e) {
-    if (e.target === this) closePolicyModal('privacyPolicyModal');
-  });
-
   document.getElementById('solidNotePrivacyModal').addEventListener('click', function (e) {
     if (e.target === this) closePolicyModal('solidNotePrivacyModal');
   });
